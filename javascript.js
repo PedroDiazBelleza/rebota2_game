@@ -123,6 +123,8 @@ class Escena extends Phaser.Scene {
 
         this.alguienGano = false;
 
+    
+        this.pintarNombreCreador();
         this.pintarMarcador();
 
         this.winText = this.add.text(480, 320, '', {
@@ -219,6 +221,26 @@ class Escena extends Phaser.Scene {
         this.marcadorMano2 = this.add.text(520, 75, '0', estiloMarcador).setOrigin(0, 0);
     }
     
+    pintarNombreCreador() {
+        const estiloNombre = {
+            fontFamily: 'Orbitron', // o 'Press Start 2P', según prefieras
+            fontSize: '30px',
+            color: '#00fff7', // Azul neón
+            align: 'right',
+            stroke: '#ff00ff', // Borde rosa brillante
+            strokeThickness: 6,
+            shadow: {
+                offsetX: 4,
+                offsetY: 4,
+                color: '#00ffcc',
+                blur: 10,
+                stroke: true,
+                fill: true
+            }
+        };
+    
+        this.nombreCreador = this.add.text(690, 580, 'Pedro Jesus Diaz Belleza', estiloNombre).setOrigin(1, 0);
+    };
 
     colocarPelota() {
         let anguloInicial = Math.random() * Math.PI / 2 + Math.PI / 4;
